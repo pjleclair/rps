@@ -6,42 +6,36 @@ function computerPlay () {
 function playRound (player, cpu) {
     player = player.toLowerCase();
     if (player==cpu) {
-        console.log("Unbelievable - It's a tie!");
         ties++;
+        return("Unbelievable - It's a tie!");
     } else {
         switch(player) {
             case "rock":
                 if (cpu=="scissors") {
-                    console.log(`Great choice old boy! The computer chose ${cpu}, you win.`);/*placeholder*/
                     playerScore++;
-                    break;
-                } else {
-                    console.log(`Sorry chum, the computer chose ${cpu}, you've lost.`);
+                    return(`Great choice old boy! The computer chose ${cpu}, you win.`);/*placeholder*/
+                } else {                    
                     computerScore++;
-                    break;
+                    return(`Sorry chum, the computer chose ${cpu}, you've lost.`);
                 }
             case "paper":
                 if (cpu=="rock") {
-                    console.log(`Great choice old boy! The computer chose ${cpu}, you win.`);/*placeholder*/
                     playerScore++;
-                    break;
+                    return(`Great choice old boy! The computer chose ${cpu}, you win.`);/*placeholder*/
                 } else {
-                    console.log(`Sorry chum, the computer chose ${cpu}, you've lost.`);
                     computerScore++;
-                    break;
+                    return(`Sorry chum, the computer chose ${cpu}, you've lost.`);
                 }
             case "scissors":
                 if (cpu=="paper") {
-                    console.log(`Great choice old boy! The computer chose ${cpu}, you win.`);/*placeholder*/
                     playerScore++;
-                    break;
+                    return(`Great choice old boy! The computer chose ${cpu}, you win.`);/*placeholder*/
                 } else {
-                    console.log(`Sorry chum, the computer chose ${cpu}, you've lost.`);
                     computerScore++;
-                    break;
+                    return(`Sorry chum, the computer chose ${cpu}, you've lost.`);
                 }
             default:
-                console.log("Please re-read the available choices (not caps sensitive).")
+                return("Please re-read the available choices (not caps sensitive).")
         }
     }
 }
