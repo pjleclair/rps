@@ -41,7 +41,7 @@ function playRound (player, cpu) {
                     break;
                 }
             default:
-                console.log("hmm.")
+                console.log("Please re-read the available choices (not caps sensitive).")
         }
     }
 }
@@ -58,17 +58,21 @@ function game (num) {
     Computer: ${computerScore}
     Ties: ${ties}`);
     if (playerScore > computerScore)
-        winner = "player";
+        winner = "The player";
     else if (playerScore == computerScore)
-        winner = "random() function"
+        winner = "Nobody"
     else
-        winner = "computer";
-    console.log(`The ${winner} is today's victor.`)
+        winner = "The computer";
+    console.log(`${winner} is today's victor.`)
 }
 
 let playerScore = 0, computerScore = 0, ties = 0;
 let winner;
 
 let playerSelection = prompt("Choose wisely: Rock, Paper, or Scissors?");
-let rounds = prompt("How many rounds, friend?");
+/*let rounds = prompt("How many rounds, friend?");
+
+hardcoded for now*/
+let rounds = 5;
+
 game(rounds);
