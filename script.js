@@ -63,10 +63,27 @@ function game (num) {
 let playerScore = 0, computerScore = 0, ties = 0;
 let winner;
 
-let playerSelection = prompt("Choose wisely: Rock, Paper, or Scissors?");
+
+/*let playerSelection = prompt("Choose wisely: Rock, Paper, or Scissors?");*/
 /*let rounds = prompt("How many rounds, friend?");
 
 hardcoded for now*/
 let rounds = 5;
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    playerSelection = 'rock';
+    game(rounds);
+});
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    playerSelection = 'paper';
+    game(rounds);
+});
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    playerSelection = 'scissors';
+    game(rounds);
+});
 
-game(rounds);
+
+//game(5);
