@@ -47,17 +47,17 @@ function game (num) {
         playRound(playerSelection,computerSelection);
         i++;
     }
-    console.log(`The final scores are as follows:
+    results.textContent=`The final scores are as follows:
     Player: ${playerScore}
     Computer: ${computerScore}
-    Ties: ${ties}`);
+    Ties: ${ties}`;
     if (playerScore > computerScore)
         winner = "The player";
     else if (playerScore == computerScore)
         winner = "Nobody"
     else
         winner = "The computer";
-    console.log(`${winner} is today's victor.`)
+    victor.textContent=`${winner} is today's victor.`;
 }
 
 let playerScore = 0, computerScore = 0, ties = 0;
@@ -69,6 +69,9 @@ let winner;
 
 hardcoded for now*/
 let rounds = 5;
+const results = document.querySelector('.results');
+const victor = document.querySelector('.victor');
+
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     playerSelection = 'rock';
